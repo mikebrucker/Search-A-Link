@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import ExternalLinks from "./ExternalLinks";
+import Links from "./Links";
 import Searchbar from "./Searchbar";
-import InternalLinks from "./InternalLinks";
 import axios from "axios";
 
 class Dashboard extends Component {
@@ -49,13 +48,15 @@ class Dashboard extends Component {
             : ""}
         </div>
         <h1>{this.state.searchLink}</h1>
-        <ExternalLinks
+        <Links
           searchURL={this.searchURL}
-          externalLinks={this.state.externalLinks}
+          links={this.state.externalLinks}
+          type="External"
         />
-        <InternalLinks
+        <Links
           searchURL={this.searchURL}
-          internalLinks={this.state.internalLinks}
+          links={this.state.internalLinks}
+          type="Internal"
         />
       </div>
     );

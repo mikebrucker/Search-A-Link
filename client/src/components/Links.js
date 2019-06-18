@@ -1,10 +1,10 @@
 import React from "react";
 import "./Links.scss";
 
-function InternalLinks({ internalLinks, searchURL }) {
+function Links({ type, links, searchURL }) {
   const displayLinks =
-    internalLinks && internalLinks.length > 0
-      ? internalLinks.map(link => {
+    links && links.length > 0
+      ? links.map(link => {
           return (
             <div
               className="link"
@@ -15,13 +15,14 @@ function InternalLinks({ internalLinks, searchURL }) {
             </div>
           );
         })
-      : "No Internal Links";
+      : "No External Links";
+
   return (
     <div>
-      <h2>Internal Links</h2>
+      <h2>{type} Links</h2>
       <div>{displayLinks}</div>
     </div>
   );
 }
 
-export default InternalLinks;
+export default Links;
